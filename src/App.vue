@@ -3,7 +3,7 @@
     <div class="bg-white flex py-4 justify-between px-10">
       <h1 class="text-4xl text-primary font-bold" >TechCart</h1>
       <div class="flex gap-10 "> 
-        <div class="w-10 h-10 rounded-full bg-primary" ></div>
+        <div class="w-10 h-10 rounded-full bg-primary" ></div> // social media icons
         <div class="w-10 h-10 rounded-full bg-primary" ></div>
         <div class="w-10 h-10 rounded-full bg-primary" ></div>
         <div class="w-10 h-10 rounded-full bg-primary" ></div>
@@ -19,6 +19,7 @@
   </div>
 </template>
 <script  setup>
+// import {Icon} from "@iconify/vue"
 import { RouterView } from 'vue-router'
 import {computed,} from 'vue'
 import {Vue3Lottie} from 'vue3-lottie' 
