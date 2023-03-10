@@ -1,0 +1,18 @@
+<template>
+    <div class="flex flex-col mx-auto items-center text-primary justify-center w-1/2 my-20 relative p-16 bg-fade rounded-2xl backdrop-blur backdrop-opacity-1 border border-fade shadow   ">
+     <div class="text-4xl font-bold">Login</div>
+     <form class="flex font-semibold gap-1  flex-col w-full ">
+       <InputField type="email" placeholder="Email" name="Email" v-model="email" />
+       <InputField type="password" placeholder="Password" name="Password" v-model="password" />
+       <button class="py-2 hover:bg-secondary transition-colors rounded-md px-2 my-2 bg-primary text-white" type="submit">Login</button>
+     </form>
+   </div>
+</template>
+
+<script setup>
+import InputField from '@/Constant/InputField.vue';
+import { ref } from 'vue'
+
+const email =ref('')
+const password =ref('')
+</script>
