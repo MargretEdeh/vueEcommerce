@@ -1,26 +1,32 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <div class="bg-white py-3 " >
+      <div>
+        <h1 class="text-primary text-3xl px-5">StarCart</h1>
+      </div>
+    </div>
+  <div class="lottie relative">
+<Vue3Lottie :animationData=" theAnimation "   :loop="true" :autoplay="true" :rendererSettings="{preserveAspectRatio: 'xMidYMid slice'}" />
+  </div>
+  <div> 
+  <p class="text-center">Made with ❤️ by </p> 
+</div>
+  </div>
 </template>
-
-<script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+<script  setup>
+import {computed} from 'vue'
+import {Vue3Lottie} from 'vue3-lottie' 
+import animationData from  './animationData.json'
+import 'vue3-lottie/dist/style.css'
+const theAnimation =computed(() => animationData)
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style scoped>
+.lottie {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
 </style>
