@@ -7,7 +7,6 @@
        <InputField type="text" placeholder="Last Name" name="Last name" v-model="lastName" />
        <InputField type="email" placeholder="Email" name="Email" v-model="email" />
        <InputField type="password" placeholder="Password" name="Password" v-model="password" />
-       <InputField type="password" placeholder="Confirm Password" name="Confirm Password" v-model="confirmPassword"  />
 
        <button class="py-2 hover:bg-secondary transition-colors rounded-md px-2 my-2 bg-primary text-white" type="submit">Register</button>
      </form>
@@ -22,5 +21,4 @@ const FirstName=ref('')
 const lastName =ref('')
 const email =ref('')
 const password =ref('')
-const confirmPassword =ref('')
 </script>

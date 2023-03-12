@@ -3,3 +3,24 @@
 @tailwind components;
 
 @tailwind utilities;
+
+.scroll::-webkit-scrollbar {
+    overflow-y: scroll;
+  display: none;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scroll::-webkit-scrollbar{
+    width: 0px;
+  background-color: transparent;
+}
+
+
+.hide-scrollbars {
+    -ms-overflow-style: none; /* For Edge */
+    scrollbar-width: none; /* For Firefox */
+  }
+  .hide-scrollbars::-webkit-scrollbar {
+    /* For webkit browsers */
+    display: none;
+  }
