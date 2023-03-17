@@ -1,18 +1,22 @@
 <template>
    <!-- to be move to a Header component -->
   <div :class="{'background ': true ,'bg-primary': layout}">
-    <div v-if="layout" class="bg-white flex py-4 justify-between px-10">
+    <div class="bg-white shadow flex py-4 justify-between px-10">
       <div class="flex flex-row-reverse">
-      <h1 class="text-4xl text-primary font-bold" >TechCart</h1>
+      <h1 class="text-2xl md:text-4xl text-primary font-bold" >TechCart</h1>
       <Icon icon="mdi:cart-arrow-down" color="#320281" width="40" height="40" />
       </div>
-      <div class="flex gap-10 "> 
-        <Icon icon="ri:instagram-fill" color="#320281" width="40" height="40" />
-        <Icon icon="ri:twitter-fill" color="#320281" width="40" height="40" />
-        <Icon icon="ri:linkedin-fill" color="#320281" width="40" height="40" />
-        <Icon icon="carbon:logo-github" color="#320281" width="40" height="40" />
+      <div class="flex gap-3 items-center md:gap-10 "> 
+        <Icon class="w-6 h-6 md:w-10 md:h-10" icon="ri:instagram-fill" color="#320281"  />
+        <Icon class="w-6 h-6 md:w-10 md:h-10" icon="ri:twitter-fill" color="#320281"  />
+        <Icon class="w-6 h-6 md:w-10 md:h-10" icon="ri:linkedin-fill" color="#320281"  />
+        <Icon class="w-6 h-6 md:w-10 md:h-10" icon="carbon:logo-github" color="#320281"  />
         
       </div>
+    </div>
+    <div v-if="!layout"> 
+      <ProductHeader/>
+  
     </div>
   <div  v-if="layout" class="lottie relative">
 <Vue3Lottie :animationData=" theAnimation "   :loop="true" :autoplay="true" :rendererSettings="{preserveAspectRatio: 'xMidYMid slice'}" />
@@ -28,6 +32,7 @@ import {Icon} from "@iconify/vue"
 import { RouterView } from 'vue-router'
 import {computed,} from 'vue'
 import {Vue3Lottie} from 'vue3-lottie' 
+import ProductHeader from "./Constant/ProductHeader.vue"
 import animationData from  './animationData.json'
 import 'vue3-lottie/dist/style.css'
 import { useRoute } from "vue-router"
@@ -51,7 +56,7 @@ const route = useRoute()
 .background{
   width: 100%;
   height: 100%;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   z-index: -1;

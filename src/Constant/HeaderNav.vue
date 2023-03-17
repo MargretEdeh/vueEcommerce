@@ -1,5 +1,5 @@
 <template>
-    <div class="mx-2 my-2 flex items-center justify-between">
+    <div class="px-2  py-2 flex items-center justify-between shadow">
         <div class="py-1 rounded-lg px-3 border justify-between border-secondary flex  w-1/2">
             <input type="text" v-model="search" placeholder="Search"  class="py-1 border-none outline-none px-1" />
             <Icon icon="material-symbols:search-rounded" color="#320281" width="30" height="30" />
