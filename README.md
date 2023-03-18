@@ -1,11 +1,11 @@
 # ecommerce
 
 
-#Documentation of My AltSchool 3rd semester exams
+# Documentation of My AltSchool 3rd semester exams
 
 Hey, welcome to my readme file. This project was created using the Vue CLI. I used the composition API throughout the project because I felt that it was the new trending stuff. The Link to my project is in the GitHub repository. I decide to make a sort of e-commerce application when I looked at the documentation of the API we were asked to use. this is the API of the product https://dummyjson.com/products.
 
-##Tools used
+## Tools used
 
 Vue J's
 
@@ -21,7 +21,7 @@ Tailwind CSS
 
 Vue motion
 
-##How to use the App
+## How to use the App
 
 When you click on the link the first page you will encounter as a first-time user is the registration Page where you will prompt to register without which you can't use the app.
 
@@ -35,7 +35,7 @@ Same as in the login page you can't navigate to the product page unless you're s
 
 In the product pages, there are two headers the first Header holds the projects logo on the left and some social media icons on the right. This first Header is available in all the routes while the second header houses the product categories.
 
-###Content of the product route
+### Content of the product route
 
 The product route houses the two headers the universal header and the product categories. In the second header, only the route with the accordion and the logout route works, for now, the other links will be implemented in due time. When the accordion with the text category is clicked it fetches an API of all the categories using this API  https://dummyjson.com/products/category/smartphones . While it fetches the API a spinner is been displayed.
 
@@ -45,7 +45,7 @@ Then when the categories are fetched it's just a div with a height of 100px. The
 
 Then if you click any of the categories it takes you to a route with the categories name e.g smartphone as a dynamic param. That changes anytime you click different categories. So this route with the dynamic param has the fetch cards of the smartphone product you want to purchase.
 
-##The search
+## The search
 
 The search bar in this route search performs a query on input so whenever a letter is typed it combines the word and searches the whole API, not minding the particular category.
 
@@ -57,7 +57,7 @@ On the view more params are dynamic, the param is the Id of that particular prod
 
 Other exciting features will be implemented soon. So please stay tuned.
 
-##Problems Encountered:
+## Problems Encountered:
 
 Well, the first problem I encountered was the first form I created. Initially, I created a single input where I pass the parameters as props so that I can be able to reuse it. Was also emitting the on-input and vmodel. To get the data typed.
 
