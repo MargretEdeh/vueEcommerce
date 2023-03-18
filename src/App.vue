@@ -7,10 +7,10 @@
       <Icon icon="mdi:cart-arrow-down" color="#320281" width="40" height="40" />
       </div>
       <div class="flex gap-3 items-center md:gap-10 "> 
-        <Icon class="w-6 h-6 md:w-10 md:h-10" icon="ri:instagram-fill" color="#320281"  />
-        <Icon class="w-6 h-6 md:w-10 md:h-10" icon="ri:twitter-fill" color="#320281"  />
-        <Icon class="w-6 h-6 md:w-10 md:h-10" icon="ri:linkedin-fill" color="#320281"  />
-        <Icon class="w-6 h-6 md:w-10 md:h-10" icon="carbon:logo-github" color="#320281"  />
+        <a href="https://www.instagram.com/margretedeh/" target="_blank" ><Icon class="w-6 h-6 md:w-10 md:h-10" icon="ri:instagram-fill" color="#320281"  /> </a>
+        <a href="https://twitter.com/EdehMargret" target="_blank" ><Icon class="w-6 h-6 md:w-10 md:h-10" icon="ri:twitter-fill" color="#320281"  /></a>
+        <a href="https://www.linkedin.com/in/margret-edeh-65505b200/" target="_blank" ><Icon class="w-6 h-6 md:w-10 md:h-10" icon="ri:linkedin-fill" color="#320281"  /></a>
+        <a href="https://github.com/MargretEdeh" target="_blank" ><Icon class="w-6 h-6 md:w-10 md:h-10" icon="carbon:logo-github" color="#320281"  /></a>
         
       </div>
     </div>
