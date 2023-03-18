@@ -45,7 +45,7 @@
         </button>
       </form>
       <div class="flex items-center text-primary ">
-    <p>Don't have an Account  ?  </p>
+    <p  class="text-xs md:text-base" >Don't have an Account  ?  </p>
     <RouterLink class="font-semibold" to="/">Register </RouterLink>   
     </div>
     </div>
