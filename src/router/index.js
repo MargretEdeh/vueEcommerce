@@ -11,7 +11,12 @@ import EachProduct from '@/components/EachProduct.vue'
 
 const routes = [
   {
-    path: '/register',
+    path: '/',
+    name: 'register',
+    component:RegisterPage
+  },
+  {
+    path: '/',
     name: 'register',
     component: RegisterPage,
     meta : {
