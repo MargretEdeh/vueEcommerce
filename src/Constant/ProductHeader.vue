@@ -29,7 +29,7 @@
               nav,
           }"
         >
-          <RouterLink @click="logout" class="flex gap-3" :to="data.link">
+          <RouterLink class="flex gap-3" :to="data.link">
             <Icon :icon="data.icon" color="#fff" width="25" height="25" />
             {{ data.name }}
           </RouterLink>

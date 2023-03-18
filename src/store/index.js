@@ -55,7 +55,7 @@ export default createStore({
       // commit('setId', auth.currentUser.uid)
       if(auth.currentUser){
       router.push(`./product/${auth.currentUser.uid}`)
-      console.log(auth.currentUser);
+      // console.log(auth.currentUser);
       }
       },
       async register({commit}, info){
@@ -80,7 +80,7 @@ export default createStore({
         return
       }
       commit('setUser', auth.currentUser)
-      console.log(auth.currentUser)
+      // console.log(auth.currentUser)
       commit('setId', auth.currentUser.uid)
       if(auth.currentUser){
       router.push("./login")
