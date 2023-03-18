@@ -31,6 +31,10 @@
       </div>
        <button class="py-2 hover:bg-secondary transition-colors rounded-md px-2 my-2 bg-primary text-white" type="submit">Register</button>
      </form>
+     <div class="flex items-center text-primary ">
+    <p>Already have an account ?  </p>
+    <RouterLink class="font-semibold" to="/login">Login </RouterLink>   
+    </div>
    </div>
    <div v-if="loading" class="loading">
     <div class="spinner"></div>  
