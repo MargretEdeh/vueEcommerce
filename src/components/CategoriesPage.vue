@@ -20,7 +20,7 @@
         width="60"
         height="50"
       />
-      <div v-motion-slide-visible-left class="grid gap-3 grid-cols-1 md:grid-cols-2 mx-auto w-[90%]  lg:w-[60%] my-5">
+      <div  class="grid gap-3 grid-cols-1 md:grid-cols-2 mx-auto w-[90%]  lg:w-[60%] my-5">
         <div
           class="py-5 rounded hover:bg-purple-200 shadow-2xl"
           v-for="product in products"
