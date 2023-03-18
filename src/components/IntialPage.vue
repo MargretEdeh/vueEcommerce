@@ -1,6 +1,6 @@
 <template>
   <div class=" mx-5 md:mx-0 my-10 md:my-20">
-    <div class="bg-secondary  relative my-28  flex md:w-3/4  md:mx-auto h- md:h-72">
+    <div class="bg-secondary animate__animated animate__fadeInLeft relative my-28  flex md:w-3/4  md:mx-auto h- md:h-72">
       <div class="flex-1 flex-col w-1/2" ></div>
       <div class="lg:w-80 -top-5 md:-top-10 md:left-60 lg:left-8 left-20 absolute w-44 h-44 lg:h-80">
         <Vue3Lottie

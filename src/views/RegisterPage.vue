@@ -1,11 +1,11 @@
 <template>
   <div>
     
-    <div class="flex flex-col md:mx-auto items-center text-primary justify-center  mx-4 md:w-1/2 my-14  p-10 md:p-16 bg-fade rounded-2xl backdrop-blur backdrop-opacity-1 border border-fade shadow   ">
+    <div  class=" animate__animated animate__fadeInLeft flex flex-col md:mx-auto items-center text-primary justify-center  mx-4 md:w-1/2 my-14  p-6 md:p-16 bg-fade rounded-2xl backdrop-blur backdrop-opacity-1 border border-fade shadow   ">
      <div class="text-4xl font-bold">Register</div>
      
      
-     <form @submit.prevent="register " class="flex font-semibold gap-1  flex-col w-full ">
+     <form  @submit.prevent="register " class="flex font-semibold gap-1  flex-col w-full ">
       <div class="flex font-semibold gap-1 flex-col w-full" > 
         <label class="" for="First name">First Name</label>
         <input        v-on:input="error.FirstName = ''" type="text" class="py-2 rounded-md focus:outline  focus:outline-primary px-2" placeholder="First Name"  v-model="FirstName"  />
