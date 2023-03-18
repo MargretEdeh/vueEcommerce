@@ -73,11 +73,11 @@ I also had issues with the mobile view for my project page where the menu bar he
 
 I did a lot of frequent commits and pushed them to GitHub for easy understanding.
 
-I built my project by running an npm run build. I built my project in the dist folder. Then I rushed to my vertical dashboard where I imported my repo from my GitHub repository and then deployed the project using vercel my link was created in seconds 😍✨.
+I built my project by running an npm run build. I built my project in the dist folder. Then I rushed to my vercel dashboard where I imported my repo from my GitHub repository and then deployed the project using vercel my link was created in seconds 😍✨.
 
 Believe me, the joy when your project screen shows when deployed.
 
-How to contribute to the project.
+ ### How to contribute to the project.
 
 Fork the repo and name it whatever you like then
 
@@ -87,7 +87,7 @@ When cloning is complete. Open it in your code editor
 
 Then run npm install to install all the dependencies for the project the run npm run serve to see your development server while contributing
 
-this is the link to the project eCommerce
+this is the link to the project eCommerce https://vue-ecommerce-puce.vercel.app/
 
 Much love from Margret Edeh 💜 (big name)😌😌🌝
 
