@@ -2,8 +2,8 @@
   <div>
     <div
       :class="{
-        'bg-primary px-4 h-screen fixed gap-4 z-20 lg:z-0 lg:relative flex lg:flex-row flex-col  lg:items-center md:gap-5 w-full lg:h-16': show,
-        ' h-10 relative bg-primary ':nav ,
+        'bg-primary px-4 h-screen fixed gap-4 z-20 lg:z-0 lg:relative flex lg:flex-row flex-col  lg:items-center md:gap-5 w-full lg:h-16': true,
+        '  relative h-[30px] bg-primary ': nav ,
       }"
     >
       <div>
@@ -67,7 +67,7 @@
           </RouterLink>
         </div>
       </div>
-      <RouterLink  @click="logout" class="flex text-white  gap-3" to="/login">
+      <RouterLink v-show="!nav"  @click="logout" class="flex text-white  gap-3" to="/login">
             <Icon icon="carbon:logout" color="red" width="25" height="25" />
             logout
           </RouterLink>
