@@ -47,7 +47,7 @@
         <div
           v-show="showCategory"
           v-if="data.accordion"
-          class="mx-auto w-60 h-72 overflow-y-scroll hide-scrollbars bg-primary z-50 top-24 lg:top-16 py-2 rounded-lg absolute"
+          class="mx-auto w-60 h-72 overflow-y-scroll hide-scrollbars bg-primary z-40 top-24 lg:top-16 py-2 rounded-lg absolute"
         >
           <div v-if="isLoading" class="loading">
             <div class="spinner"></div>

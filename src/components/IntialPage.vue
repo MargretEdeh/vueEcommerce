@@ -1,6 +1,6 @@
 <template>
   <div class=" mx-5 md:mx-0 my-10 md:my-20">
-    <div v-motion-roll-visible-top class="bg-secondary -z-10 relative my-28  flex md:w-3/4  md:mx-auto h- md:h-72">
+    <div v-motion-roll-visible-top class="bg-secondary  relative my-28  flex md:w-3/4  md:mx-auto h- md:h-72">
       <div class="flex-1 flex-col w-1/2" ></div>
       <div class="lg:w-80 -top-5 md:-top-10 md:left-60 lg:left-8 left-20 absolute w-44 h-44 lg:h-80">
         <Vue3Lottie
@@ -11,7 +11,7 @@
         />
       </div>
 
-      <div v-for="content in view" :key="content" class="my-44 relative  md:my-32 lg:my-10 lg:w-3/4 px-3  md:px-20">
+      <div v-for="content in view" :key="content" class="my-44   relative  md:my-32 lg:my-10 lg:w-3/4 px-3  md:px-20">
         <h1 class="lg:text-4xl text-2xl text-center md:text-start text-primary font-bold" >{{ content.title }} </h1>
         <p class="italic text-center md:text-start font-medium md:text-base text-lg text-white ">{{ content.body }}</p>
           <Icon @click="Previous" class="absolute top-60 md:top-16 md:px-1 px-3 py-3 md:py-3  rounded-full bg-slate-300 left-0 md:left-2 " icon="material-symbols:arrow-back-ios-rounded" color="#320281" width="50" height="50" />
