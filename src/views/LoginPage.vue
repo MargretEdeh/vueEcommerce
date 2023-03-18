@@ -1,7 +1,6 @@
 <template>
   <div>
     <div
-      v-motion-pop-visible-once
       class="flex flex-col md:mx-auto mx-4 items-center text-primary justify-center md:w-1/2 my-20 relative p-16 bg-fade rounded-2xl backdrop-blur backdrop-opacity-1 border border-fade shadow"
     >
       <div class="text-4xl font-bold">Login</div>
