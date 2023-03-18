@@ -1,7 +1,7 @@
 <template>
   <div>
     
-    <div  class=" animate__animated animate__fadeInLeft flex flex-col md:mx-auto items-center text-primary justify-center  mx-4 md:w-1/2 my-14  p-8d md:p-16 bg-fade rounded-2xl backdrop-blur backdrop-opacity-1 border border-fade shadow   ">
+    <div  class=" animate__animated animate__fadeInLeft flex flex-col md:mx-auto items-center text-primary justify-center  mx-4 md:w-1/2 my-14  p-5 md:p-16 bg-fade rounded-2xl backdrop-blur backdrop-opacity-1 border border-fade shadow   ">
      <div class="text-4xl font-bold">Register</div>
      
      
