@@ -87,8 +87,13 @@ export default createStore({
 
       },
     async logout({commit}){
+      try{
       await signOut(auth)
-      commit("removeUser", auth)
+      commit("removeUser")
+      router.push("./login")
+      }catch(err){
+        console.log(err)
+      }
     }
 
     // async logout({ commit }) {

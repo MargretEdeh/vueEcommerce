@@ -4,48 +4,49 @@ export const sideNavData = [
     icon: "carbon:category",
     link: "",
     accordion: true,
+    type: "category",
   },
   {
     name: "Carts",
     icon: "carbon:shopping-cart",
-    link: "/cart",
+    link: "",
+    type: "cart",
   },
   {
     name: "Orders",
     icon: "carbon:shopping-bag",
-    link: "/order",
+    link: "",
+    type: "order",
   },
   {
     name: "Gift Cards",
     icon: "fluent:gift-card-add-20-regular",
-    link: "/giftcard",
+    link: "",
+    type: "giftcard",
   },
   {
     name: "Wishlist",
     icon: "carbon:favorite",
-    link: "/wishlist",
+    link: "",
+    type: "wishlist",
   },
   {
     name: "Reviews",
     icon: "carbon:review",
-    link: "/review",
+    link: "",
+    type: "review",
   },
   {
     name: "Help",
     icon: "ri:customer-service-line",
-    link: "/customer",
+    link: "",
+    type: "help",
   },
   // {
   //   name: "Account",
   //   icon: "carbon:user-avatar",
   //   link: "/account",
   // },
-  {
-    name: "Logout",
-    icon: "carbon:logout",
-    link: "/logout",
-    type: "logout",
-  },
 ];
 
 //content

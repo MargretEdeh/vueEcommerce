@@ -1,6 +1,6 @@
 <template>
   <div class=" mx-5 md:mx-0 my-10 md:my-20">
-    <div v-motion-roll-visible-top class="bg-secondary relative my-28  flex md:w-3/4  md:mx-auto h- md:h-72">
+    <div v-motion-roll-visible-top class="bg-secondary -z-10 relative my-28  flex md:w-3/4  md:mx-auto h- md:h-72">
       <div class="flex-1 flex-col w-1/2" ></div>
       <div class="lg:w-80 -top-5 md:-top-10 md:left-60 lg:left-8 left-20 absolute w-44 h-44 lg:h-80">
         <Vue3Lottie
@@ -20,7 +20,7 @@
       </div>
     </div>
 
-    <div  v-motion-slide-visible-bottom class="  mx-auto lg:absolute flex  my-5 flex-col">       
+    <div v-motion-slide-visible-left class="  mx-auto lg:absolute flex  my-5 flex-col">       
       <div v-motion-pop class=" flex  flex-col md:grid md:grid-cols-2 lg:grid-cols-5 gap-7 my-4 mx-auto "> 
       <div  class="flex flex-col shadow-sm  shadow-primary mx-4 px-3 py-3 rounded-xl  " v-for="each in example" :key="each">
         <img :src="each.thumbnail" alt="pic" class="w-40  h-40 mx-auto">

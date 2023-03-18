@@ -1,67 +1,172 @@
 <template>
   <div>
-    <div> 
-      <h1>Show</h1>
+    <div
+      :class="{
+        'bg-primary px-4 h-screen fixed gap-4 z-20 lg:z-0 lg:relative flex lg:flex-row flex-col  lg:items-center md:gap-5 w-full lg:h-16': true,
+        'h-10 relative  py-2 ': nav,
+      }"
+    >
+      <div>
+        <Icon
+          @click="toggleNav"
+          class="hover:animate-spin lg:hidden ml-2"
+          icon="ic:outline-menu"
+          color="#fff"
+          width="30"
+          height="30"
+        />
+      </div>
+      <div
+        class="flex lg:flex-row flex-col"
+        v-for="data in sideNavData"
+        :key="data"
+      >
+        <div
+          :class="{
+            'flex lg:justify-between text-white w-40 hover:bg-secondary rounded-lg  px-1 py-2':
+              !nav,
+            'hidden md:flex lg:justify-between text-white w-40 hover:bg-secondary rounded-lg  px-1 py-2':
+              nav,
+          }"
+        >
+          <RouterLink @click="logout" class="flex gap-3" :to="data.link">
+            <Icon :icon="data.icon" color="#fff" width="25" height="25" />
+            {{ data.name }}
+          </RouterLink>
+          <div v-if="data.accordion">
+            <Icon
+              @click="toggleCategory"
+              :class="{ 'rotate-90': showCategory }"
+              icon="ic:baseline-keyboard-arrow-down"
+              color="#fff"
+              width="30"
+              height="30"
+            />
+          </div>
+        </div>
+        <div
+          v-show="showCategory"
+          v-if="data.accordion"
+          class="mx-auto w-60 h-72 overflow-y-scroll hide-scrollbars bg-primary z-50 top-24 lg:top-16 py-2 rounded-lg absolute"
+        >
+          <div v-if="isLoading" class="loading">
+            <div class="spinner"></div>
+          </div>
+          <RouterLink
+            v-for="category in categories"
+            :key="category"
+            :to="`/product${category.link}`"
+            class="text-white"
+          >
+            <div
+              @click="clickCategory"
+              class="hover:bg-secondary list-none rounded-md w-60 px-5 py-2"
+            >
+              {{ category.name }}
+            </div>
+          </RouterLink>
+        </div>
+      </div>
+      <RouterLink @click="logout" class="flex text-white  gap-3" to="/logout">
+            <Icon icon="carbon:logout" color="red" width="25" height="25" />
+            logout
+          </RouterLink>
     </div>
-    </div>
+  </div>
 </template>
 
+<script setup>
+import { sideNavData } from "@/Data/data";
+import { Icon } from "@iconify/vue";
+import { useStore } from "vuex";
+import axios from "axios";
+import { onMounted, ref, watch } from "vue";
+import { useRouter, useRoute } from "vue-router";
+
+const isLoading = ref(false);
+const router = useRouter();
+const route = useRoute();
+const store = useStore();
+const categories = ref([]);
+const showCategory = ref(false);
+const nav = ref(true);
+
+const toggleNav = () => {
+  nav.value = !nav.value;
+};
+
+const toggleCategory = () => {
+  showCategory.value = !showCategory.value;
+};
+
+const clickCategory = () => {
+  showCategory.value = false;
+  nav.value = !nav.value;
+};
+const logout = () => {
+    store.dispatch("logout");
+    router.push("/login");
+    console.log("logout");
+};
+
+watch(route.path, () => {
+  isLoading.value = true;
+  axios
+    .get(`https://dummyjson.com/products/categories`)
+    .then((res) => {
+      categories.value = res.data.slice(0, 20).map((category) => ({
+        name: category,
+        link: `/category/${category}`,
+      }));
+      isLoading.value = false;
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
+const fetchData = async () =>{ 
+  isLoading.value = true;
+  await  axios.get(`https://dummyjson.com/products/categories${route.path}`)
+  .then((res) => {
+    categories.value = res.data.slice(0, 20).map((category) => ({
+      name: category,
+      link: `/category/${category}`,
+    }));
+    isLoading.value = false;
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+}
+onMounted(() => {
+  fetchData();
+});
 
 
+</script>
+<style scoped>
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #4e09bd;
+  border-radius: 50%;
+  animation: spin 1s ease-in-out infinite;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+</style>
 
 <!-- <template>
   <div class=" max-h-screen" > 

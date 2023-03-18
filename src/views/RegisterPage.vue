@@ -1,9 +1,9 @@
 <template>
+  <div>
+    
     <div v-motion-pop-visible-once   class="flex flex-col md:mx-auto items-center text-primary justify-center  mx-4 md:w-1/2 my-14  p-10 md:p-16 bg-fade rounded-2xl backdrop-blur backdrop-opacity-1 border border-fade shadow   ">
      <div class="text-4xl font-bold">Register</div>
-     <!-- <div class="loading">
-    <div class="spinner"></div>  
-    </div> -->
+     
      
      <form @submit.prevent="register " class="flex font-semibold gap-1  flex-col w-full ">
       <div class="flex font-semibold gap-1 flex-col w-full" > 
@@ -32,6 +32,10 @@
        <button class="py-2 hover:bg-secondary transition-colors rounded-md px-2 my-2 bg-primary text-white" type="submit">Register</button>
      </form>
    </div>
+   <div v-if="loading" class="loading">
+    <div class="spinner"></div>  
+    </div>
+   </div>
 </template>
 
 <script setup>
@@ -39,7 +43,7 @@
 import { ref } from 'vue'
 import { useStore } from 'vuex';
 const store = useStore();
-const Loading = ref(false)
+const loading = ref(false)
 
 
 // import store from '@/store';
@@ -98,9 +102,9 @@ const register = async ()=>{
     password: password.value
   }
   try{
-    Loading.value = true
+    loading.value = true
     await store.dispatch('register', user)
-    Loading.value = false
+    loading.value = false
   }catch(err){
     console.log(err)
   }
@@ -109,19 +113,19 @@ const register = async ()=>{
 </script>
 <style scoped>
 .loading {
-  display: fixed;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
   background: rgba(255, 255, 255, 0.5);
   z-index: 10;
-  justify-content: center;
+  display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .spinner {
-  display: inline-block;
   width: 50px;
   height: 50px;
   border: 4px solid rgba(0, 0, 0, 0.1);

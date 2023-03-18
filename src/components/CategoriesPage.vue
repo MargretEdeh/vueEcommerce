@@ -2,7 +2,7 @@
   <div v-if="store.state.user" class=" my-10 max-w-full">
     <div class=" w-10/12 md:w-1/2 border md:border-2 flex justify-between mx-auto py-1 px-2 rounded-xl shadow border-primary">
       <input
-        class="outline-none border-none md:px-2 md:py-2"
+        class="outline-none w-full border-none md:px-2 md:py-2"
         type="text"
         placeholder="search"
         @input="searched"
