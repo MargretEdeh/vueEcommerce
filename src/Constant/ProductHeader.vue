@@ -2,8 +2,8 @@
   <div>
     <div
       :class="{
-        'bg-primary px-4 h-screen fixed gap-4 z-20 lg:z-0 lg:relative flex lg:flex-row flex-col  lg:items-center md:gap-5 w-full lg:h-16': true,
-        '  relative h-[30px] bg-primary ': nav ,
+        'bg-primary px-4   fixed gap-4 z-20 lg:z-0 lg:relative flex lg:flex-row flex-col  lg:items-center md:gap-5 w-full lg:h-16': true,
+        '  relative h-[30px] bg-green-300 md:h-16 ': nav ,
       }"
     >
       <div>
@@ -67,10 +67,18 @@
           </RouterLink>
         </div>
       </div>
-      <RouterLink v-show="!nav"  @click="logout" class="flex text-white  gap-3" to="/login">
+      <div :class="{
+            'flex lg:justify-between text-white w-40 hover:bg-secondary rounded-lg  px-1 py-2':
+              !nav,
+            'hidden md:flex lg:justify-between text-white w-40 hover:bg-secondary rounded-lg  px-1 py-2':
+              nav,
+          }" >
+        <RouterLink  @click="logout" class="flex text-white  gap-3" to="/login">
             <Icon icon="carbon:logout" color="red" width="25" height="25" />
             logout
           </RouterLink>
+         </div>
+      
     </div>
   </div>
 </template>
@@ -83,7 +91,7 @@ import axios from "axios";
 import { onMounted, ref, watch } from "vue";
 import { useRouter, useRoute } from "vue-router";
 
-const show = ref(true);
+// const show = ref(true);
 const isLoading = ref(false);
 const router = useRouter();
 const route = useRoute();
@@ -93,7 +101,6 @@ const showCategory = ref(false);
 const nav = ref(true);
 
 const toggleNav = () => {
-  show.value = !show.value;
   nav.value = !nav.value;
 };
 
