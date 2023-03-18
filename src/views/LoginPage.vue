@@ -106,6 +106,10 @@ const login =async () => {
     }
   }
 };
+if(store.state.user){
+  const router = useRouter();
+  router.push(`/product/:id`);
+}
 </script>
 
 <style scoped>

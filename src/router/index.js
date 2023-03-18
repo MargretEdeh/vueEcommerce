@@ -14,12 +14,18 @@ const routes = [
     path: '/register',
     name: 'register',
     component: RegisterPage,
+    meta : {
+      requiresGuest : true
+    }
     
   },
   {
     path: '/login',
     name: 'login',
-    component: LoginPage
+    component: LoginPage,
+    meta : {
+      requiresGuest : true
+    }
   },
   {
     path : '/:id',
@@ -41,7 +47,7 @@ const routes = [
     name: 'product',
     component: ProductPageVue,
     meta : {
-      requiresGuest : true
+      requiresAuth : true
     },
     children:[
       {
@@ -49,7 +55,7 @@ const routes = [
         name: "product",
         component: IntialPageVue,
         meta : {
-          requiresGuest : true
+          requiresAuth : true
         }
       },
       {
@@ -57,7 +63,7 @@ const routes = [
         name: "category",
         component: CategoriesPage,
         meta : {
-          requiresGuest : true
+          requiresAuth : true
         },
         children:[
           {
@@ -81,6 +87,21 @@ const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
 })
+
+
+// router.beforeEach((to, from, next) => {
+//   const requiresAuth = to.matched.some(record => record.meta.requiresAuth)
+//   const requiresGuest = to.matched.some(record => record.meta.requiresGuest)
+//   const currentUser = auth.currentUser
+
+//   if (requiresAuth && !currentUser) {
+//     next({ name: 'login' })
+//   } else if (requiresGuest && currentUser) {
+//     next({ name: 'product', params: { id: currentUser.uid } })
+//   } else {
+//     next()
+//   }
+// })
 
 // router.beforeEach((to, from, next) => {
 //   if(to.path === '/login' || to.path === '/register' && auth.currentUser){

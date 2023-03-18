@@ -67,7 +67,7 @@
           </RouterLink>
         </div>
       </div>
-      <RouterLink @click="logout" class="flex text-white  gap-3" to="/logout">
+      <RouterLink  @click="logout" class="flex text-white  gap-3" to="/login">
             <Icon icon="carbon:logout" color="red" width="25" height="25" />
             logout
           </RouterLink>
@@ -103,9 +103,10 @@ const clickCategory = () => {
   showCategory.value = false;
   nav.value = !nav.value;
 };
-const logout = () => {
-    store.dispatch("logout");
-    router.push("/login");
+const logout =  () => {
+   store.state.user=null;
+   router.push("/login");
+   store.dispatch("logout");
     console.log("logout");
 };
 

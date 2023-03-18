@@ -42,8 +42,10 @@
 // import InputField from '@/Constant/InputField.vue';
 import { ref } from 'vue'
 import { useStore } from 'vuex';
+import { useRouter } from 'vue-router';
 const store = useStore();
 const loading = ref(false)
+const router = useRouter()
 
 
 // import store from '@/store';
@@ -109,6 +111,9 @@ const register = async ()=>{
     console.log(err)
   }
 }
+}
+if(store.state.user){
+  router.push(`/product/:id`);
 }
 </script>
 <style scoped>

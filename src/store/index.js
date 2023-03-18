@@ -50,6 +50,7 @@ export default createStore({
         }
         return
        }
+       
       commit('setUser', auth.currentUser)
       // commit('setId', auth.currentUser.uid)
       if(auth.currentUser){
